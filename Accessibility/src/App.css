@@ -1,0 +1,125 @@
+@import 'tailwindcss';
+
+.dark-input {
+  border: 2px solid rgb(255, 255, 255);
+}
+
+.light-input {
+  border: 2px solid white;
+}
+
+.dark-input::placeholder {
+  color: white;
+}
+
+.light-input::placeholder {
+  color: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+/* Skeleton animation */
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg,
+      #e0e0e0 25%,
+      #f0f0f0 37%,
+      #e0e0e0 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s infinite linear;
+  border-radius: 6px;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+header .img {
+  width: 50px;
+  height: 50px;
+}
+
+header .title {
+  width: 200px;
+  height: 20px;
+}
+
+header .search {
+  margin-left: auto;
+  width: 250px;
+  height: 35px;
+}
+
+/* Product grid */
+.product-container-skeleton {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.product {
+  height: 200px;
+}
+
+/* Apply skeleton style */
+.img,
+.title,
+.search,
+.product {
+  background: linear-gradient(90deg,
+      #e0e0e0 25%,
+      #f0f0f0 37%,
+      #e0e0e0 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s infinite linear;
+  border-radius: 8px;
+}
+
+.product-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 1rem;
+  background-color: gray;
+  color: #ffffff;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+}
+
+.nav{
+  background-color: gray;
+  width: 45%;
+  margin: 1rem;
+  height: 550px;
+}

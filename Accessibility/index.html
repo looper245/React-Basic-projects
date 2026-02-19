@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>accessibility</title>
+  </head>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+/* Skeleton animation */
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #e0e0e0 25%,
+    #f0f0f0 37%,
+    #e0e0e0 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.4s infinite linear;
+  border-radius: 6px;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+header .img {
+  width: 50px;
+  height: 50px;
+}
+
+header .title {
+  width: 200px;
+  height: 20px;
+}
+
+header .search {
+  margin-left: auto;
+  width: 250px;
+  height: 35px;
+}
+
+/* Product grid */
+.product-container-skeleton {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.product {
+  height: 200px;
+}
+
+/* Apply skeleton style */
+.img,
+.title,
+.search,
+.product {
+  background: linear-gradient(
+    90deg,
+    #e0e0e0 25%,
+    #f0f0f0 37%,
+    #e0e0e0 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.4s infinite linear;
+  border-radius: 8px;
+}
+
+  </style>
+  <body>
+    <div id="root">
+      <header>
+        <div class="img"></div>
+        <div class="title"></div>
+        <div class="search"></div>
+      </header>
+      <div class="product-container-skeleton">
+        <div class="product"></div>
+        <div class="product"></div>
+        <div class="product"></div>
+        <div class="product"></div>
+        <div class="product"></div>
+        <div class="product"></div>
+        <div class="product"></div>
+        <div class="product"></div>
+        <div class="product"></div>
+        <div class="product"></div>
+        <div class="product"></div>
+        <div class="product"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
