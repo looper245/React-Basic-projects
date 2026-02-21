@@ -11,10 +11,10 @@ console.log(product.name);
   return (
     <>
         <Product 
-          image={product.image}
-          name={product.name}
+          categoryImg={product.categoryImg}
+          title={product.title}
           category={product.category}
-          description={product.description}
+          slug={product.slug}
           price={product.price}
         />
     </>

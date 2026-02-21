@@ -2,7 +2,8 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const fetchProducts = createAsyncThunk(
     "product/fetch",
     async () => {
-        let res = await fetch('https://mocki.io/v1/325a326e-4b5a-4cff-851e-ee17fddca2cf')
+        let res = await fetch('https://api.escuelajs.co/api/v1/products')
+        
         return await res.json()
     }
 )
@@ -22,10 +23,7 @@ let productsSlice = createSlice({
         builder.addCase(fetchProducts.pending, (state) => {
             state.loading = true
         }).addCase(fetchProducts.fulfilled, (state, action) => {
-            state.data = action.payload.map((item, index) => ({
-                ...item,
-                product: `product ${index + 1}`
-            }));
+            state.data = action.payload
             state.loading = false
         }).addCase(fetchProducts.rejected, (state, action) => {
             state.error = action.error.message

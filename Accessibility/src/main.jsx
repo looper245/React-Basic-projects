@@ -8,7 +8,6 @@ import Cart from './Cart.jsx'
 import Description from './Description.jsx'
 import { Provider } from 'react-redux'
 import Store from './Redux/Store.jsx'
-import UserProduct from './UserProduct.jsx'
 import MyContaxFun from './CartContaxAPI.jsx'
 import MyContaxSearchFun from './SearchContax.jsx'
 import WebSiteColorMod from './WebMod.jsx'
@@ -34,10 +33,7 @@ const router = createBrowserRouter([
         path: '/description',
         element: <Description />
       },
-      {
-        path: '/User/',
-        element: <UserProduct />,
-      },
+     
     ],
   },
 ])

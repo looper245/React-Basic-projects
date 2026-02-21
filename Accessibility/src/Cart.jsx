@@ -8,10 +8,10 @@ export default function Cart() {
     <div className='flex flex-wrap gap-5 p-10'>
       {getCartData.map((item, i) => (
         <Product key={i}
-          image={item.image}
-          name={item.name}
-          category={item.category}
-          description={item.description}
+            category={item.category}
+           categoryImg={item.categoryImg}
+          title={item.title}
+          slug={item.slug}
           price={item.price}
         />
       ))}

@@ -88,7 +88,6 @@ export default function Layout() {
                     <Link to='/' className="focus-visible:ring-2 outline-none" tabIndex='1'><h3 aria-label='go-to-home-page-btn' >Home</h3></Link>
                     <Link to='/Cart' className="focus-visible:ring-2 outline-none" tabIndex='2'><h3 aria-label='go-to-Cart-page-btn' >Cart</h3></Link>
                     <Link to='/description' className="focus-visible:ring-2 outline-none" tabIndex='3'><h3 aria-label='go-to-Description-page-btn' >Description</h3></Link>
-                    <Link to='/User' className="focus-visible:ring-2 outline-none" tabIndex='3'><h3 aria-label='go-to-Description-page-btn' >User</h3></Link>
                 </nav>
                 <nav className='flex gap-5'>
                     <form action="">

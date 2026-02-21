@@ -7,15 +7,17 @@ import Product from './Product'
 import { useNavigate } from 'react-router-dom'
 import ProductSkeleton from './ProductSkeleton'
 import { centralData } from './centralData'
+
 function App() {
 
   let { data, loading, error } = useSelector((state) => state.product)
-  let a = data.filter(t=>t.id==1).map((item)=>(
-    console.log(item)
+  console.log(data.map((item)=>{
+    console.log(item);
     
-  ))
-  console.log(a);
-  
+  }));
+
+
+
   let getProductdata = useDispatch()
 
   useEffect(() => {
@@ -27,19 +29,21 @@ function App() {
   const { searchData, SetSearchData } = useContext(SearchContax)
 
 
-  let ProductData = useMemo(() => {
+  let productData = useMemo(() => {
     if (searchData) {
-      return data.filter(t => t.name.includes(searchData))
+      return data.filter(t => t.title.includes(searchData))
     } else {
       return data
+
     }
   })
 
+  console.log(searchData);
+  
+  
+  
 
-
-
-
-
+  
 
 
   return (
@@ -49,18 +53,16 @@ function App() {
           ? Array.from({ length: 6 }).map((_, i) => (
             <ProductSkeleton key={i} />
           ))
-          : ProductData.map((item, i) => (
-            <Product key={i}
-              image={item.image}
-              name={item.name}
-              category={item.category}
-              description={item.description}
-              price={item.price}
-              num={++num}
-            />
+          : productData.map((item, i) => (
+           <Product
+           title={item.title}
+           category={item.category.name}
+           categoryImg={item.category.image}
+           slug={item.slug}
+           price={item.price}
+           />
           ))
         }
-
       </div>
     </>
   )
